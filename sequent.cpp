@@ -1,11 +1,32 @@
 #include "sequent.h"
 #include <sstream>
 #include <qdebug.h>
+#include <QString>
 
-Sequent::Sequent(QVector<Node> left, QVector<Node> right)
+
+Sequent::Sequent(QVector<Node> left, QVector<Node> right, int id, int parent_id, bool indikator)
 {
     this->m_left = left;
     this->m_right = right;
+    this->m_id = id;
+    this->m_parent_id = parent_id;
+    this->m_indikator = indikator;
+}
+
+Sequent::Sequent () {
+
+}
+
+int Sequent::getId() {
+    return m_id;
+}
+
+int Sequent::getParentId() {
+    return m_parent_id;
+}
+
+int Sequent::getIndikator() {
+    return m_indikator;
 }
 
 QVector<Node> Sequent::getLeft(){
@@ -16,11 +37,15 @@ QVector<Node> Sequent::getRight(){
     return this->m_right;
 }
 
-void Sequent::print_sequent(){
+QString Sequent::print_sequent(){
     int i;
     int n = getLeft().length();
     int n1 = getRight().length();
     std::ostringstream stream;
+
+    if (n == 0) {
+        stream <<" ";
+    }
 
     if(n == 1){
         for (i = 0; i < n; i++){
@@ -43,29 +68,36 @@ void Sequent::print_sequent(){
 
     stream << "|- ";
 
+    if (n1 == 0) {
+        stream<< " ";
+    }
+
     if(n1 == 1){
         for (i = 0; i < n1; i++){
             getRight()[i].getFormula()->printFormula(stream);
         }
     }
     else if(n1 == 2){
-            getLeft()[0].getFormula()->printFormula(stream);
+            getRight()[0].getFormula()->printFormula(stream);
             stream << ',';
-            getLeft()[1].getFormula()->printFormula(stream);
+            getRight()[1].getFormula()->printFormula(stream);
     }
+
     else if (n1 > 2){
         for (i = 0; i <= n1-2; i++){
-            getLeft()[i].getFormula()->printFormula(stream);
+            getRight()[i].getFormula()->printFormula(stream);
             stream << ", ";
         }
-        getLeft()[n1-1].getFormula()->printFormula(stream);
+        getRight()[n1-1].getFormula()->printFormula(stream);
     }
 
 
-    stream <<  getRight()[n1-1].getFormula()->getType();
-
     string formulaStream = stream.str();
-    formulaStream += " ;";
-    qDebug() << QString::fromStdString(formulaStream);
+    return QString::fromStdString(formulaStream);
 
 }
+
+void Sequent::setIndikator(bool indikator){
+    this->m_indikator = indikator;
+}
+

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1034</width>
-    <height>659</height>
+    <width>921</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="andLeft">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -33,7 +33,7 @@
      <string>∧ L</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="rightAnd">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -46,7 +46,7 @@
      <string>∧ D</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="orLeft">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -59,7 +59,7 @@
      <string>∨ L</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="orRight">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -72,7 +72,7 @@
      <string>∨ D</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="notLeft">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -90,7 +90,7 @@
      <rect>
       <x>90</x>
       <y>10</y>
-      <width>771</width>
+      <width>671</width>
       <height>31</height>
      </rect>
     </property>
@@ -111,7 +111,7 @@
    <widget class="QPushButton" name="potvrdi">
     <property name="geometry">
      <rect>
-      <x>880</x>
+      <x>770</x>
       <y>10</y>
       <width>112</width>
       <height>34</height>
@@ -121,7 +121,7 @@
      <string>Potvrdi</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="notRight">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -134,7 +134,7 @@
      <string>¬ D</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="impLeft">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -147,7 +147,7 @@
      <string>⇒  L</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="impRight">
     <property name="geometry">
      <rect>
       <x>500</x>
@@ -160,7 +160,7 @@
      <string>⇒ D</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="falseLeft">
     <property name="geometry">
      <rect>
       <x>570</x>
@@ -173,7 +173,7 @@
      <string>⊥ L</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_11">
+   <widget class="QPushButton" name="trueRight">
     <property name="geometry">
      <rect>
       <x>640</x>
@@ -186,7 +186,7 @@
      <string>T R</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_12">
+   <widget class="QPushButton" name="ass">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -199,7 +199,7 @@
      <string>ass</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_13">
+   <widget class="QPushButton" name="leftWeak">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -212,7 +212,7 @@
      <string>Levo slabljenje</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_14">
+   <widget class="QPushButton" name="rightWeak">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -225,7 +225,7 @@
      <string>Desno slabljenje</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_15">
+   <widget class="QPushButton" name="leftContraction">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -238,11 +238,11 @@
      <string>Leva kontrakcija</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_16">
+   <widget class="QPushButton" name="rightContraction">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>110</y>
+      <x>20</x>
+      <y>150</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -251,11 +251,11 @@
      <string>Desna kontrakcija</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_17">
+   <widget class="QPushButton" name="leftPermutation">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>110</y>
+      <x>180</x>
+      <y>150</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -264,11 +264,11 @@
      <string>Leva permutacija</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_18">
+   <widget class="QPushButton" name="rightPermutation">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>110</y>
+      <x>340</x>
+      <y>150</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -281,30 +281,30 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
-      <width>801</width>
-      <height>371</height>
+      <y>200</y>
+      <width>871</width>
+      <height>111</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_19">
+   <widget class="QPushButton" name="ponisti">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>440</y>
-      <width>112</width>
+      <x>20</x>
+      <y>360</y>
+      <width>221</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ponisti</string>
+     <string>Ponisti poslednju akciju</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_20">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>500</y>
+      <x>780</x>
+      <y>370</y>
       <width>112</width>
       <height>34</height>
      </rect>
@@ -319,7 +319,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1034</width>
+     <width>921</width>
      <height>31</height>
     </rect>
    </property>
