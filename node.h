@@ -7,12 +7,10 @@ class Node
 {
 private:
     Formula m_formula;
-    QVector <Formula> m_assumption;
 public:
-    Node(Formula formula, QVector <Formula> assumption);
+    Node(Formula formula);
     Node();
     Formula getFormula();
-    QVector <Formula> getAssumption();
 
 };
 

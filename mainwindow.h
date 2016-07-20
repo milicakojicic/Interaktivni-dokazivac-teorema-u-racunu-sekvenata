@@ -58,6 +58,16 @@ private slots:
 
     QVector<Sequent> nadjiPreostale();
 
+    void on_resetuj_clicked();
+
+    void resetuj_dugmice(Sequent s);
+
+    Sequent trenutniSekvent(int currentSequent);
+
+    void on_leftPermutation_clicked();
+
+    void on_rightPermutation_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

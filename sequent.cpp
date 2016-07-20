@@ -4,13 +4,12 @@
 #include <QString>
 
 
-Sequent::Sequent(QVector<Node> left, QVector<Node> right, int id, int parent_id, bool indikator)
+Sequent::Sequent(QVector<Node> left, QVector<Node> right, int id, int parent_id)
 {
     this->m_left = left;
     this->m_right = right;
     this->m_id = id;
     this->m_parent_id = parent_id;
-    this->m_indikator = indikator;
 }
 
 Sequent::Sequent () {
@@ -23,10 +22,6 @@ int Sequent::getId() {
 
 int Sequent::getParentId() {
     return m_parent_id;
-}
-
-int Sequent::getIndikator() {
-    return m_indikator;
 }
 
 QVector<Node> Sequent::getLeft(){
@@ -97,7 +92,4 @@ QString Sequent::print_sequent(){
 
 }
 
-void Sequent::setIndikator(bool indikator){
-    this->m_indikator = indikator;
-}
 
