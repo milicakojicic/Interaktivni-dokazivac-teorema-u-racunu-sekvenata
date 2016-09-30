@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEdit->setFocus();
     setWindowTitle("Interaktivni dokazivač u prirodnoj dedukciji");
+    setWindowIcon(QIcon("/josi.jpg"));
+
 }
 
 MainWindow::~MainWindow()
@@ -44,6 +46,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_potvrdi_clicked()
 {
+
     /* kada se jednom klikne potvrdi, onemogucujemo da se klikne opet sve dok se ne resetuje aplikacija */
     ui->potvrdi->setDisabled(true);
 
@@ -83,10 +86,7 @@ void MainWindow::on_potvrdi_clicked()
     /* trazimo trenutni sekvent i za njega aktiviramo dugmice */
     Sequent trenutni = trenutniSekvent(current_sequent);
     resetuj_dugmice(trenutni);
-    ui->leftPermutation->setDisabled(false);
-    ui->rightPermutation->setDisabled(false);
-    ui->rightWeak->setDisabled(false);
-    ui->leftWeak->setDisabled(false);
+
     ui->ass->setDisabled(false);
     ui->ponisti->setDisabled(false);
     ui->resetuj->setDisabled(false);
@@ -151,7 +151,6 @@ void MainWindow::on_andLeft_clicked()
 
 void MainWindow::on_impRight_clicked()
 {
-
     Sequent sequent = sequents.at(current_sequent);
 
     QVector<Node> leftSequent = sequent.getLeft();
@@ -358,7 +357,6 @@ void MainWindow::on_rightAnd_clicked()
 
 void MainWindow::on_orLeft_clicked()
 {
-
     Sequent sequent = sequents.at(current_sequent);
 
     QVector<Node> leftSequent = sequent.getLeft();
@@ -430,7 +428,6 @@ void MainWindow::on_orLeft_clicked()
 
 void MainWindow::on_orRight_clicked()
 {
-
     Sequent sequent = sequents.at(current_sequent);
 
     QVector<Node> leftSequent = sequent.getLeft();
@@ -607,7 +604,6 @@ void MainWindow::on_falseLeft_clicked()
 {
     Sequent sequent = sequents.at(current_sequent);
 
-
     QVector<Node> leftSequent = sequent.getLeft();
     QVector<Node> rightSequent = sequent.getRight();
 
@@ -733,8 +729,10 @@ void MainWindow::on_ass_clicked()
                     ui->textBrowser->append("<b style='color:blue'>Završeno</b>");
                     ui->textBrowser->append(preostali[preostali.length()-1].print_sequent());
 
+
                     /* trazimo sledece pravilo koje ce se dokazivati*/
                     traziNovoPravilo(sequent);
+
                 }
                 else{
                     /* ako nema nista vise da se dokazuje ispisuje se crvemo TEOREMA*/
@@ -921,6 +919,7 @@ void MainWindow::on_rightContraction_clicked()
 /* nakon sto se jedan sekvent dokaze, trazimo sledeci koji treba da se dokaze */
 void MainWindow::traziNovoPravilo(Sequent s){
 
+
     /*trazimo roditelja sekventa*/
     Sequent parent = vratiRoditelja(s);
 
@@ -983,12 +982,13 @@ QVector<Sequent> MainWindow::nadjiPreostale(){
 /* funkcija koja vraca dokaz jedan korak u nazad */
 void MainWindow::on_ponisti_clicked()
 {
+
     /* uzima se trenutni sekvent */
     Sequent sequent_current = trenutniSekvent(current_sequent);
     /* uzima se roditelj trenutnog sekventa */
     Sequent roditelj = vratiRoditelja(sequent_current);
 
-    /* Ako se roditelj formula deli na dva dela,brisemo iz skupa svih sequenta */
+    /* Ako se roditelj formula ne deli na dva dela,brisemo iz skupa svih sequenta */
     if(roditeljiSaDvaDeteta.indexOf(roditelj.getId()) == -1){
         sequents.removeLast();
     }
